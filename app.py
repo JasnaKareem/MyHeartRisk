@@ -7,10 +7,10 @@ import streamlit as st
 
 mainpath = os.path.dirname(__file__)
 heartimage = os.path.join(mainpath, r'heart.png')
-neg = os.path.join(mainpath, r'neg.png')
-pos = os.path.join(mainpath, r'pos.png')
-compare = os.path.join(mainpath, r'Comparison.png')
-pca = os.path.join(mainpath, r'PCA.png')
+neg = os.path.join(mainpath, r'neg.jpg')
+pos = os.path.join(mainpath, r'pos.jpg')
+compare = os.path.join(mainpath, r'Comparison.jpg')
+pca = os.path.join(mainpath, r'PCA.jpg')
 
 # Title
 st.image(heartimage, width=100)
@@ -109,3 +109,4 @@ with tab4:
     st.image(neg, caption='Features Contributing to Controls', use_column_width=True)
     st.image(pos, caption='Features Contributing to Cases', use_column_width=True)
    
+
