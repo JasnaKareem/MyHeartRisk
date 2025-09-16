@@ -106,7 +106,8 @@ with tab3:
 with tab4:
     st.subheader('Interpretation: Logistic Regression Coefficients')
     st.write('This section provides insights into how different health parameters influence the prediction of heart disease. Understanding these factors can help in making informed health decisions.')
-    st.image(neg, caption='Features Contributing to Controls', use_column_width=True)
-    st.image(pos, caption='Features Contributing to Cases', use_column_width=True)
+    st.image(neg, caption='Features Contributing to Controls')
+    st.image(pos, caption='Features Contributing to Cases')
    
+
 
