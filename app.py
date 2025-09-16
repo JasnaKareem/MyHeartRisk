@@ -17,7 +17,7 @@ st.image(heartimage, width=100)
 st.title('MyHeartRisk')
 st.subheader('Standardized WebApp to Predict Heart Disease Based on Real World Hospital Case/Control Data')
 st.write('**Instruction**')
-st.write('This app uses machine learning to predict the likelihood of heart disease based on user-provided health parameters. Adjust the options in the sidebar to input your health data and click "Check" to see your risk assessment.')
+st.write('This app uses machine learning to predict the likelihood of heart disease based on user-provided health parameters. Adjust the options in the sidebar ( if closed, click on the >> symbol located at the top left corner ) to input your health data and click "Check" to see your risk assessment.')
 # Load dataset
 tab1, tab2, tab3, tab4 = st.tabs(["Report", "Dataset", "Model", "Interpretation"])
 
@@ -109,6 +109,7 @@ with tab4:
     st.image(neg, caption='Features Contributing to Controls')
     st.image(pos, caption='Features Contributing to Cases')
    
+
 
 
 
