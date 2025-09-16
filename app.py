@@ -76,7 +76,7 @@ with tab2:
     st.subheader('Dataset Overview')
     st.write('120 Datapoints were collected as per sample size statistics consisiting of 60 cases and controls each. The External set consists of 10 cases and 10 controls.')
     st.dataframe(df)
-    st.image(pca, caption='PCA Plot Showing Distribution of Cases and Controls (Cummalative Variance: 39%)', use_column_width=True)
+    st.image(pca, caption='PCA Plot Showing Distribution of Cases and Controls (Cummalative Variance: 39%)')
     st.write('The PCA plot above shows the distribution of cases and controls based on the health parameters provided. The separation indicates that the features used are effective in distinguishing between the two groups.')
  
    
@@ -86,7 +86,7 @@ with tab3:
     st.subheader('Model Performance')
     st.write('The model used is Logistic Regression for prediction, trained on a real-world dataset of hospital case/control data. Below are the performance metrics of the model:')
     
-    st.image(compare, caption='Model Performance Comparison (10 Models with 5 Fold Stratified CV)', use_column_width=True)
+    st.image(compare, caption='Model Performance Comparison (10 Models with 5 Fold Stratified CV)')
    
     st.write("""
     Internal Validation Metrics ( 5x2 K-Fold Stratified Cross Validation ):
@@ -110,6 +110,7 @@ with tab4:
     st.image(neg, caption='Features Contributing to Controls')
     st.image(pos, caption='Features Contributing to Cases')
    
+
 
 
 
