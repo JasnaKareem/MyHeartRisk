@@ -14,7 +14,7 @@ pca = os.path.join(mainpath, r'PCA.jpg')
 
 # Title
 st.image(heartimage, width=100)
-st.title('Heart Disease Predictor')
+st.title('MyHeartRisk')
 st.subheader('Standardized WebApp to Predict Heart Disease Based on Real World Hospital Case/Control Data')
 st.write('**Instruction**')
 st.write('This app uses machine learning to predict the likelihood of heart disease based on user-provided health parameters. Adjust the options in the sidebar to input your health data and click "Check" to see your risk assessment.')
@@ -109,6 +109,7 @@ with tab4:
     st.image(neg, caption='Features Contributing to Controls')
     st.image(pos, caption='Features Contributing to Cases')
    
+
 
 
 
