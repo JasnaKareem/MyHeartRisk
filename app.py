@@ -15,9 +15,9 @@ pca = os.path.join(mainpath, r'PCA.jpg')
 # Title
 st.image(heartimage, width=100)
 st.title('MyHeartRisk')
-st.subheader('Standardized WebApp to Predict Heart Disease Based on Real World Hospital Case/Control Data')
+st.subheader('Standardized WebApp to Predict Coronary Artery Disease Based on Real World Hospital Case/Control Data')
 st.write('**Instruction**')
-st.write('This app uses machine learning to predict the likelihood of heart disease based on user-provided health parameters. Adjust the options in the sidebar ( if closed, click on the >> symbol located at the top left corner ) to input your health data and click "Check" to see your risk assessment.')
+st.write('This app uses machine learning to predict the likelihood of coronary artery disease based on user-provided health parameters. Adjust the options in the sidebar ( if closed, click on the >> symbol located at the top left corner ) to input your health data and click "Check" to see your risk assessment.')
 # Load dataset
 tab1, tab2, tab3, tab4 = st.tabs(["Report", "Dataset", "Model", "Interpretation"])
 
@@ -30,7 +30,7 @@ features = X.columns
 
 # Sidebar - User input
 st.sidebar.header('User Input Bar')
-st.sidebar.write("Give Your Parameters and Click 'Check' to Predict Heart Disease Risk.")
+st.sidebar.write("Give Your Parameters and Click 'Check' to Predict Coronary Artery Disease Risk.")
 predict_btn = st.sidebar.button('Check')
 user_data = {}
 for col in features:
@@ -63,10 +63,10 @@ with tab1:
 
         st.subheader('Results')
         if prediction == 1:
-            st.write("**⚠️ Your Parameters Resemble That of Patient Cases With Heart Disease. Take Care of Yourself. Heart Disease Predicted**")
+            st.write("**⚠️ Your Parameters Resemble That of Patient Cases With Coronary Artery Disease. Take Care of Yourself. Coronary Artery Disease Predicted**")
             confidence = probabilities[1] * 100
         else:
-            st.write("**✅ Your Parameters Don’t Resemble Patient Cases With Heart Disease. No Heart Diseases Predicted**")
+            st.write("**✅ Your Parameters Don’t Resemble Patient Cases With Coronary Artery Disease. No Coronary Artery Disease Predicted**")
             confidence = probabilities[0] * 100
 
         st.progress(int(confidence), text=f"Confidence Level: {confidence:.2f}%", width=400)
@@ -100,15 +100,16 @@ with tab3:
     - **Specificity**: 0.80
     - **MCC**: 0.81
              
-    These metrics indicate that the model is quite effective at predicting heart disease based on the provided health parameters.
+    These metrics indicate that the model is quite effective at predicting Coronary Artery Disease based on the provided health parameters.
     """)
 
 with tab4:
     st.subheader('Interpretation: Logistic Regression Coefficients')
-    st.write('This section provides insights into how different health parameters influence the prediction of heart disease. Understanding these factors can help in making informed health decisions.')
+    st.write('This section provides insights into how different health parameters influence the prediction of Coronary Artery Disease. Understanding these factors can help in making informed health decisions.')
     st.image(neg, caption='Features Contributing to Controls')
     st.image(pos, caption='Features Contributing to Cases')
    
+
 
 
 
