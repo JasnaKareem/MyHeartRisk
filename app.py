@@ -472,7 +472,7 @@ if predict_btn:
                 ('num', Pipeline([('imputer', SimpleImputer(strategy='mean')), 
                                  ('scaler', StandardScaler())]), numerical_features),
                 ('cat', Pipeline([('imputer', SimpleImputer(strategy='most_frequent')), 
-                                  ('onehot', OneHotEncoder(handle_unknown='ignore', sparse=False))]), categorical_features)
+                                  ('onehot', OneHotEncoder(handle_unknown='ignore'))]), categorical_features)
             ])
         
         # Fit on dataset and transform both dataset and user
@@ -657,6 +657,7 @@ with tab4:
     
     st.markdown("---")
     
+
 
 
 
