@@ -300,11 +300,17 @@ model = joblib.load(model_path)
 if predict_btn:
   
 
-    # Show loader
-    components.html(rotating_dots, height=100)
+    placeholder = st.empty()
 
-    # Simulate a task (e.g., ML prediction)
-    time.sleep(5)  
+    # Show loader
+    placeholder.html(rotating_dots, height=100)
+    
+    # Simulate processing (replace with your real logic)
+    time.sleep(5)
+    
+    # Clear loader and show results
+    placeholder.empty()   # ❌ removes the loader
+    st.success("Analysis complete!")
 
    
 
@@ -561,6 +567,7 @@ else:
     </div>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
