@@ -493,15 +493,19 @@ if predict_btn:
         # Sort by similarity descending
         results_sorted = results.sort_values(by='Similarity (%)', ascending=False)
         
-        # Optionally format similarity to 2 decimals
         results_sorted['Similarity (%)'] = results_sorted['Similarity (%)'].map(lambda x: f"{x:.2f}")
         results_sorted['Target'] = results_sorted['Target'].map({0: 'CONTROL', 1: 'CASE'})
+        
+        # Remove only the first row where Target is None
+        if results_sorted['Target'].isna().any():
+            first_none_index = results_sorted[results_sorted['Target'].isna()].index[0]
+            results_sorted = results_sorted.drop(first_none_index).reset_index(drop=True)
+        
         top_n = 11
         st.subheader(f"Patient Ages Similar To Your Health Parameters")
-        top_results = results_sorted.head(top_n).iloc[1:].reset_index(drop=True)
-
+        top_results = results_sorted.head(top_n)
+        
         st.dataframe(top_results)
-                                
         
 with tab1:
        st.markdown("""
@@ -660,6 +664,7 @@ with tab4:
     
     st.markdown("---")
     
+
 
 
 
