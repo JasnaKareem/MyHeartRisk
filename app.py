@@ -418,6 +418,7 @@ if predict_btn:
         pca = PCA(n_components=2)
         pca_result = pca.fit_transform(df_processed)
         explained_var = pca.explained_variance_ratio_ * 100
+        plt.close()
         
         # -----------------------
         # Plot in Streamlit
@@ -659,6 +660,7 @@ with tab4:
     
     st.markdown("---")
     
+
 
 
 
