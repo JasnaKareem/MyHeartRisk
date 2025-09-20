@@ -298,17 +298,15 @@ model = joblib.load(model_path)
 
 # Show tabs and content only when analysis starts
 if predict_btn:
-    # Create tabs when analysis is performed
-    placeholder = st.empty()   # Reserve a spot for loader
+  
 
     # Show loader
-    placeholder.components.v1.html(rotating_dots, height=100)
+    components.html(rotating_dots, height=100)
 
     # Simulate a task (e.g., ML prediction)
     time.sleep(5)  
 
-    # Remove loader and show result
-    placeholder.empty()
+   
 
     tab1, tab2, tab3, tab4 = st.tabs(["Report Dashboard", "Dataset", "Model Performance", "Feature Analysis"])
     
@@ -563,6 +561,7 @@ else:
     </div>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
