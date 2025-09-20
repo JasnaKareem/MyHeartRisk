@@ -462,7 +462,7 @@ with tab3:
     <div class="dataset-section">
         <h2> Deployed Model</h2>
         <p style="font-size: 1.1rem; opacity: 0.9;">
-            The Deployed Model is based on Logistic Regression
+            Logistic Regression
         </p>
     </div>
     """, unsafe_allow_html=True)
@@ -545,6 +545,7 @@ with tab4:
     
     st.markdown("---")
     
+
 
 
 
