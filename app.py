@@ -223,33 +223,7 @@ with st.sidebar:
     
   
     
-    # Group other numeric features
-    for col in features:
-        if col != age_col:  # Skip age since we handled it above
-            if pd.api.types.is_numeric_dtype(X[col]):
-                min_val = float(X[col].min())
-                max_val = float(X[col].max())
-                mean_val = float(X[col].mean())
-                
-                # Add appropriate emoji based on column name
-                emoji = "📏"
-                if "blood" in col.lower() or "bp" in col.lower():
-                    emoji = "🩸"
-                elif "cholesterol" in col.lower() or "chol" in col.lower():
-                    emoji = "🧪"
-                elif "glucose" in col.lower() or "sugar" in col.lower():
-                    emoji = "🍯"
-                elif "heart" in col.lower() or "hr" in col.lower():
-                    emoji = "💓"
-                elif "weight" in col.lower() or "bmi" in col.lower():
-                    emoji = "⚖️"
-                
-                user_data[col] = st.slider(
-                    f"{emoji} {col}", 
-                    min_val, max_val, mean_val,
-                    format="%.2f",
-                    help=f"Normal range: {min_val:.2f} - {max_val:.2f}"
-                )
+   
     
     # Handle categorical features
     categorical_features = []
@@ -547,6 +521,7 @@ with tab4:
     
     st.markdown("---")
     
+
 
 
 
