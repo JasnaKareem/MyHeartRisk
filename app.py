@@ -482,14 +482,14 @@ with tab2:
 with tab3:
     st.markdown("""
     <div class="model-performance">
-        <h2> Advanced Machine Learning Model</h2>
+        <h2> Deployed Model</h2>
         <p style="font-size: 1.1rem; opacity: 0.9;">
-            Our Logistic Regression model achieves exceptional performance through rigorous validation and testing.
+            The Deployed Model is based on Logistic Regression
         </p>
     </div>
     """, unsafe_allow_html=True)
 
-    st.image(compare, caption=' Comprehensive Model Comparison (10 Models with 5-Fold Stratified Cross-Validation)', width=400)
+    st.image(compare, caption=' Comprehensive Model Comparison (10 Models with 5-Fold Stratified Cross-Validation)')
     
     st.markdown("---")
     
@@ -566,6 +566,7 @@ with tab4:
     
     st.markdown("---")
     
+
 
 
 
