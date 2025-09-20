@@ -529,7 +529,7 @@ with tab4:
         st.markdown("""
         <div style="background: #e8f5e8; padding: 1rem; border-radius: 8px;">
             <p><strong>Bars</strong> represent health parameters that, when present, 
-            are associated with <strong>lower risk</strong> of coronary heart disease.</p>
+            are associated with <strong>lower risk</strong> of coronary artery disease.</p>
         </div>
         """, unsafe_allow_html=True)
     
@@ -539,12 +539,13 @@ with tab4:
         st.markdown("""
         <div style="background: #ffeaea; padding: 1rem; border-radius: 8px;">
             <p><strong>Bars</strong> represent health parameters that, when present, 
-            are associated with <strong>higher risk</strong> of coronary heart disease.</p>
+            are associated with <strong>higher risk</strong> of coronary artery disease.</p>
         </div>
         """, unsafe_allow_html=True)
     
     st.markdown("---")
     
+
 
 
 
