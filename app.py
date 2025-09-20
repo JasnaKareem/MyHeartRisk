@@ -443,13 +443,13 @@ if predict_btn:
         ax.set_ylabel(f"PCA 2")
         ax.set_title("PCA Projection")
         ax.legend()
-        
-        st.pyplot(fig, width=800)
         st.markdown("""
           <div style="background: #e8f5e8; padding: 1rem; border-radius: 8px;">
             <p>The Star Represents Your Data Point in Parameteric Space (Cummulative Variance = 37 %)</p>
         </div>
         """, unsafe_allow_html=True)
+        st.pyplot(fig, width=800)
+      
                         
         
 with tab1:
@@ -609,6 +609,7 @@ with tab4:
     
     st.markdown("---")
     
+
 
 
 
