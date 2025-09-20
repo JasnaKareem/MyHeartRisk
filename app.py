@@ -388,29 +388,7 @@ if predict_btn:
         # Additional insights
         st.markdown("---")
         
-        col3, col4, col5 = st.columns(3)
-        
-        with col3:
-            st.metric(
-                label="Dataset Size",
-                value="120 patients",
-                help="Total number of patients used for model training"
-            )
-        
-        with col4:
-            st.metric(
-                label="Model Accuracy",
-                value="94%",
-                help="Internal validation accuracy"
-            )
-        
-        with col5:
-            st.metric(
-                label="External Validation",
-                value="100%",
-                help="Performance on external test set"
-            )
-
+     
    
    
 
@@ -467,7 +445,7 @@ with tab2:
     st.markdown("---")
     
     st.markdown("### Principal Component Analysis")
-    st.image(pca, caption='PCA Visualization: Distribution of Cases vs Controls (Cumulative Variance: 37%)', width=400)
+    st.image(pca, caption='PCA Visualization: Distribution of Cases vs Controls (Cumulative Variance: 37%)')
     
     st.markdown("""
     <div style="background: #e3f2fd; padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
@@ -488,7 +466,10 @@ with tab3:
         </p>
     </div>
     """, unsafe_allow_html=True)
-
+    st.markdown("""
+        ### Comparative Analysis
+        *5 K-Fold Stratified Cross Validation*
+        """)
     st.image(compare, caption=' Comprehensive Model Comparison (10 Models with 5-Fold Stratified Cross-Validation)')
     
     st.markdown("---")
@@ -503,11 +484,11 @@ with tab3:
         
         metrics_col1, metrics_col2 = st.columns(2)
         with metrics_col1:
-            st.metric(" Accuracy", "94% ± 1%", "Excellent")
-            st.metric(" Sensitivity", "92% ± 4%", "High Detection")
+            st.metric(" Accuracy", "94% ± 1%")
+            st.metric(" Sensitivity", "92% ± 4%")
         with metrics_col2:
-            st.metric(" Specificity", "95% ± 3%", "Low False Positives")
-            st.metric(" MCC", "0.88 ± 0.02", "Strong Correlation")
+            st.metric(" Specificity", "95% ± 3%")
+            st.metric(" MCC", "0.88 ± 0.02")
     
     with col2:
         st.markdown("""
@@ -544,26 +525,27 @@ with tab4:
     
     with col1:
         st.markdown("### 🟢 Protective Factors")
-        st.image(neg, caption='Features Associated with Lower Risk (Controls)', width=400)
+        st.image(neg, caption='Features Associated with Lower Risk (Controls)')
         st.markdown("""
         <div style="background: #e8f5e8; padding: 1rem; border-radius: 8px;">
-            <p><strong>Green bars</strong> represent health parameters that, when present, 
+            <p><strong>Bars</strong> represent health parameters that, when present, 
             are associated with <strong>lower risk</strong> of coronary heart disease.</p>
         </div>
         """, unsafe_allow_html=True)
     
     with col2:
         st.markdown("### 🔴 Risk Factors")
-        st.image(pos, caption='Features Associated with Higher Risk (Cases)', width=400)
+        st.image(pos, caption='Features Associated with Higher Risk (Cases)')
         st.markdown("""
         <div style="background: #ffeaea; padding: 1rem; border-radius: 8px;">
-            <p><strong>Red bars</strong> represent health parameters that, when present, 
+            <p><strong>Bars</strong> represent health parameters that, when present, 
             are associated with <strong>higher risk</strong> of coronary heart disease.</p>
         </div>
         """, unsafe_allow_html=True)
     
     st.markdown("---")
     
+
 
 
 
