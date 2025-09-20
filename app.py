@@ -480,15 +480,15 @@ with tab2:
     """, unsafe_allow_html=True)
 
 with tab3:
-        st.markdown("""
-        <div class="model-performance">
-            <h2> Advanced Machine Learning Model</h2>
-            <p style="font-size: 1.1rem; opacity: 0.9;">
-                Our Logistic Regression model achieves exceptional performance through rigorous validation and testing.
-            </p>
-        </div>
-        """, unsafe_allow_html=True)
-    
+    st.markdown("""
+    <div class="model-performance">
+        <h2> Advanced Machine Learning Model</h2>
+        <p style="font-size: 1.1rem; opacity: 0.9;">
+            Our Logistic Regression model achieves exceptional performance through rigorous validation and testing.
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+
     st.image(compare, caption=' Comprehensive Model Comparison (10 Models with 5-Fold Stratified Cross-Validation)', width=400)
     
     st.markdown("---")
@@ -533,14 +533,14 @@ with tab3:
     """, unsafe_allow_html=True)
 
 with tab4:
-        st.markdown("""
-        <div class="interpretation-section">
-            <h2> Understanding the Predictions</h2>
-            <p style="font-size: 1.1rem; margin-bottom: 2rem;">
-                Learn how different health factors influence your heart disease risk assessment.
-            </p>
-        </div>
-        """, unsafe_allow_html=True)
+    st.markdown("""
+    <div class="interpretation-section">
+        <h2> Understanding the Predictions</h2>
+        <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+            Learn how different health factors influence your heart disease risk assessment.
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
     
     col1, col2 = st.columns(2)
     
@@ -566,6 +566,7 @@ with tab4:
     
     st.markdown("---")
     
+
 
 
 
