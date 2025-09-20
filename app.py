@@ -299,11 +299,18 @@ model_path = os.path.join(mainpath, r'model.joblib')
 model = joblib.load(model_path)
 
 # Show tabs and content only when analysis starts
+hide_sidebar = """
+<style>
+    [data-testid="stSidebar"] {
+        display: none;
+    }
+</style>
+"""
 if predict_btn:
   
 
     
-
+    st.markdown(hide_sidebar, unsafe_allow_html=True
     placeholder = st.empty()
     with placeholder.container():
         components.html(rotating_dots, height=100)
@@ -569,6 +576,7 @@ else:
     </div>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
