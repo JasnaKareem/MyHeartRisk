@@ -215,7 +215,7 @@ with st.sidebar:
         max_val = int(X[age_col].max())
         mean_val = int(round(X[age_col].mean()))
         user_data[age_col] = st.slider(
-            f" {age_col} (years)", 
+            f"**{age_col} (years)**", 
             min_val, max_val, mean_val,
             help="Your current age in years"
      
@@ -261,7 +261,7 @@ with st.sidebar:
         for col in categorical_features:
             unique_vals = X[col].dropna().unique()
             user_data[col] = st.selectbox(
-                f"{col}", 
+                f"**{col}**", 
                 unique_vals,
                 help=f"Select your {col.lower()}"
                 
@@ -569,6 +569,7 @@ else:
     </div>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
