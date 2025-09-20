@@ -4,6 +4,14 @@ import os
 import streamlit as st
 import streamlit.components.v1 as components
 import time
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import StandardScaler, OneHotEncoder
+from sklearn.impute import SimpleImputer
+from sklearn.compose import ColumnTransformer
+from sklearn.decomposition import PCA
 
 
 # Configure page
@@ -521,6 +529,7 @@ with tab4:
     
     st.markdown("---")
     
+
 
 
 
