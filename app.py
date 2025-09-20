@@ -497,7 +497,7 @@ if predict_btn:
         results_sorted['Similarity (%)'] = results_sorted['Similarity (%)'].map(lambda x: f"{x:.2f}")
         results_sorted['Target'] = results_sorted['Target'].map({0: 'CONTROL', 1: 'CASE'})
         top_n = 11
-        st.subheader(f"Patient Similar To Your Health Parameters")
+        st.subheader(f"Patient Ages Similar To Your Health Parameters")
         top_results = results_sorted.head(top_n).iloc[1:].reset_index(drop=True)
 
         st.dataframe(top_results)
@@ -660,6 +660,7 @@ with tab4:
     
     st.markdown("---")
     
+
 
 
 
