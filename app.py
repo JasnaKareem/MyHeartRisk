@@ -12,7 +12,7 @@ from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.impute import SimpleImputer
 from sklearn.compose import ColumnTransformer
 from sklearn.decomposition import PCA
-
+from sklearn.metrics.pairwise import cosine_similarity
 
 # Configure page
 st.set_page_config(
@@ -449,7 +449,55 @@ if predict_btn:
         </div>
         """, unsafe_allow_html=True)
         st.pyplot(fig, width=800)
-      
+
+        numerical_cols = df.select_dtypes(include=np.number).columns.tolist()
+        categorical_cols = df.select_dtypes(include='object').columns.tolist()
+        
+        # Exclude 'Target' and 'Age' from features for similarity
+        features_for_similarity = [col for col in df.columns if col not in ['Target', 'Age']]
+        
+        # -----------------------
+        # Preprocess data
+        # -----------------------
+        numerical_features = [col for col in features_for_similarity if col in numerical_cols]
+        categorical_features = [col for col in features_for_similarity if col in categorical_cols]
+        
+        # Make sure categorical columns are string
+        for col in categorical_features:
+            df[col] = df[col].astype(str)
+            user_df[col] = user_df[col].astype(str)
+        
+        preprocessor = ColumnTransformer(
+            transformers=[
+                ('num', Pipeline([('imputer', SimpleImputer(strategy='mean')), 
+                                 ('scaler', StandardScaler())]), numerical_features),
+                ('cat', Pipeline([('imputer', SimpleImputer(strategy='most_frequent')), 
+                                  ('onehot', OneHotEncoder(handle_unknown='ignore', sparse=False))]), categorical_features)
+            ])
+        
+        # Fit on dataset and transform both dataset and user
+        df_features = preprocessor.fit_transform(df[features_for_similarity])
+        user_features = preprocessor.transform(user_df[features_for_similarity])
+        
+        # -----------------------
+        # Compute similarity
+        # -----------------------
+        similarities = cosine_similarity(user_features, df_features)[0]  # array of similarity with each row
+        
+        # -----------------------
+        # Build results dataframe
+        # -----------------------
+        results = df[['Age', 'Target']].copy()
+        results['Similarity (%)'] = similarities * 100
+        
+        # Sort by similarity descending
+        results_sorted = results.sort_values(by='Similarity (%)', ascending=False)
+        
+        # Display top N similar points
+        top_n = 10
+        st.subheader(f"Top {top_n} data points similar to USER")
+        st.dataframe(results_sorted.head(top_n).reset_index(drop=True))
+              
                         
         
 with tab1:
@@ -609,6 +657,7 @@ with tab4:
     
     st.markdown("---")
     
+
 
 
 
