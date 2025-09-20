@@ -2,6 +2,9 @@ import pandas as pd
 import joblib
 import os
 import streamlit as st
+import streamlit.components.v1 as components
+import time
+
 
 # Configure page
 st.set_page_config(
@@ -560,6 +563,7 @@ else:
     </div>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
