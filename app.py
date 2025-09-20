@@ -428,7 +428,7 @@ else:
     </div>
 </div>
 """, unsafe_allow_html=True)
- with tab2:
+with tab2:
         st.markdown("""
         <div class="dataset-section">
             <h2>Dataset Overview</h2>
@@ -479,7 +479,7 @@ else:
     </div>
     """, unsafe_allow_html=True)
 
-    with tab3:
+with tab3:
         st.markdown("""
         <div class="model-performance">
             <h2> Advanced Machine Learning Model</h2>
@@ -532,7 +532,7 @@ else:
     </div>
     """, unsafe_allow_html=True)
 
-    with tab4:
+with tab4:
         st.markdown("""
         <div class="interpretation-section">
             <h2> Understanding the Predictions</h2>
@@ -566,6 +566,7 @@ else:
     
     st.markdown("---")
     
+
 
 
 
