@@ -453,7 +453,7 @@ with tab2:
     st.markdown("""
     <div style="background: #e3f2fd; padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
         <h4> What This Chart Shows:</h4>
-        <p>The PCA plot demonstrates clear separation between heart disease cases and healthy controls, 
+        <p>The PCA plot demonstrates clear separation between CAD cases and healthy controls, 
         indicating that the health parameters used in our model are effective discriminators. 
         </p>
     </div>
@@ -547,6 +547,7 @@ with tab4:
     
     st.markdown("---")
     
+
 
 
 
