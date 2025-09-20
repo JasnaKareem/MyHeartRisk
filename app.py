@@ -511,13 +511,14 @@ else:
     <p style="color: white; opacity: 0.9; margin: 0; margin-bottom: 2rem;">
         Enter your health parameters in the sidebar to get started with your personalized heart disease risk assessment.
     </p>
-    <div style="background: white; padding: 1.5rem; border-radius: 15px; margin: 1rem auto; max-width: 500px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+    <div style="background: white; padding: 1.5rem; border-radius: 15px; margin: 1rem auto; max-width: 700px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
         <p style="color: #495057; margin: 0;">
             📊 Interpretable Parameters • 🏥 Hospital-Grade Data • 🎯 94% Accuracy
         </p>
     </div>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
