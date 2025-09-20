@@ -517,7 +517,7 @@ with tab3:
         
         ext_col1, ext_col2 = st.columns(2)
         with ext_col1:
-            st.metric(" Accuracy", "100%"")
+            st.metric(" Accuracy", "100%")
             st.metric(" Sensitivity", "100%")
         with ext_col2:
             st.metric(" Specificity", "100%")
@@ -564,6 +564,7 @@ with tab4:
     
     st.markdown("---")
     
+
 
 
 
