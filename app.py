@@ -10,6 +10,38 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded"
 )
+# Rotating dots HTML
+rotating_dots = """
+<div class="loading-dots">
+  <span></span><span></span><span></span><span></span>
+</div>
+
+<style>
+.loading-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+}
+.loading-dots span {
+  width: 12px;
+  height: 12px;
+  margin: 0 6px;
+  background: #3498db;
+  border-radius: 50%;
+  animation: loading-dots 1s infinite ease-in-out;
+}
+.loading-dots span:nth-child(1) { animation-delay: 0s; }
+.loading-dots span:nth-child(2) { animation-delay: 0.2s; }
+.loading-dots span:nth-child(3) { animation-delay: 0.4s; }
+.loading-dots span:nth-child(4) { animation-delay: 0.6s; }
+
+@keyframes loading-dots {
+  0%, 80%, 100% { transform: scale(0.8); opacity: 0.6; }
+  40% { transform: scale(1.2); opacity: 1; }
+}
+</style>
+"""
 
 # Custom CSS for modern design
 st.markdown("""
@@ -141,7 +173,7 @@ pca = os.path.join(mainpath, r'PCA.jpg')
 col1, col2 = st.columns([3, 1])
 with col1:
     st.title("MyHeartRisk")
-    st.subheader("Standardized WebApp to Predict Coronary Heart Disease Based on Real World Hospital Case/Control Data")
+    st.subheader("Standardized WebApp to Predict Coronary Artery Disease Based on Real World Hospital Case/Control Data")
 with col2:
     st.image(heartimage, width=120)
 
@@ -264,6 +296,17 @@ model = joblib.load(model_path)
 # Show tabs and content only when analysis starts
 if predict_btn:
     # Create tabs when analysis is performed
+     placeholder = st.empty()   # Reserve a spot for loader
+
+    # Show loader
+    placeholder.components.v1.html(rotating_dots, height=100)
+
+    # Simulate a task (e.g., ML prediction)
+    time.sleep(5)  
+
+    # Remove loader and show result
+    placeholder.empty()
+
     tab1, tab2, tab3, tab4 = st.tabs(["Report Dashboard", "Dataset", "Model Performance", "Feature Analysis"])
     
     # Prediction only on button click
@@ -305,9 +348,8 @@ if predict_btn:
                 risk_level = "LOW"
                 risk_color = "#51cf66"
         
-        # Show balloons only if confidence is 85% or higher
-        if confidence >= 85:
-            st.balloons()
+      
+        
         
         with col2:
             # Confidence metrics card
@@ -518,6 +560,7 @@ else:
     </div>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
