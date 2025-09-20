@@ -502,7 +502,7 @@ if predict_btn:
             results_sorted = results_sorted.drop(first_none_index).reset_index(drop=True)
         results_sorted = results_sorted.iloc[1:].reset_index(drop=True)
         top_n = 10
-        st.subheader(f"Patient AgesSimilar To Your Health Parameters (Excluding Age)")
+        st.subheader(f"Patient Ages Similar To Your Health Parameters (Excluding Age)")
         top_results = results_sorted.head(top_n)
         
         st.dataframe(top_results)
@@ -664,6 +664,7 @@ with tab4:
     
     st.markdown("---")
     
+
 
 
 
