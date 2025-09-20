@@ -180,7 +180,7 @@ with st.sidebar:
         max_val = int(X[age_col].max())
         mean_val = int(round(X[age_col].mean()))
         user_data[age_col] = st.slider(
-            f" {age_col} (years)", 
+            f"📝 {age_col} (years)", 
             min_val, max_val, mean_val,
             help="Your current age in years"
         )
@@ -520,3 +520,4 @@ else:
     </div>
 
     """, unsafe_allow_html=True)
+
