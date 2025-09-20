@@ -192,7 +192,7 @@ features = X.columns
 with st.sidebar:
     st.markdown("""
     <div style="text-align: center; padding: 1rem; background: linear-gradient(90deg, #ff6b6b, #ee5a6f); border-radius: 10px; margin-bottom: 1rem;">
-        <h2 style="color: white; margin: 0;">🩺 Health Parameters</h2>
+        <h2 style="color: white; margin: 0;">Health Parameters</h2>
         <p style="color: white; opacity: 0.9; margin: 0;">Enter your health data below</p>
     </div>
     """, unsafe_allow_html=True)
@@ -567,6 +567,7 @@ else:
     </div>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
