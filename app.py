@@ -299,7 +299,7 @@ model_path = os.path.join(mainpath, r'model.joblib')
 model = joblib.load(model_path)
 
 # Show tabs and content only when analysis starts
-
+tab1, tab2, tab3, tab4 = st.tabs(["Report Dashboard", "Dataset", "Model Performance", "Feature Analysis"])
 if predict_btn:
   
     placeholder = st.empty()
@@ -312,7 +312,7 @@ if predict_btn:
     # remove the whole container
     placeholder.empty()
 
-    tab1, tab2, tab3, tab4 = st.tabs(["Report Dashboard", "Dataset", "Model Performance", "Feature Analysis"])
+   
     
     # Prediction only on button click
     with tab1:
@@ -566,6 +566,7 @@ with tab4:
     
     st.markdown("---")
     
+
 
 
 
