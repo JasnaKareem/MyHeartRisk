@@ -302,13 +302,15 @@ if predict_btn:
 
     
 
-    # Show loader
-    components.html(rotating_dots, height=100)
+    placeholder = st.empty()
+    with placeholder.container():
+        components.html(rotating_dots, height=100)
     
-    # Simulate processing (replace with your real logic)
-    time.sleep(5)
-  
-    st.success("Analysis complete!")
+    # long processing
+    time.sleep(4)
+    
+    # remove the whole container
+    placeholder.empty()
 
    
 
@@ -565,6 +567,7 @@ else:
     </div>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
