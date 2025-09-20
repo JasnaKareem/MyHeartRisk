@@ -439,12 +439,12 @@ if predict_btn:
                    pca_result[df["Target"] == -1, 1],
                    c="gold", s=200, edgecolor="black", marker="*", label="You")
         
-        ax.set_xlabel(f"PCA 1 ({explained_var[0]:.1f}% variance)")
-        ax.set_ylabel(f"PCA 2 ({explained_var[1]:.1f}% variance)")
-        ax.set_title("PCA Projection with Your Data Highlighted")
+        ax.set_xlabel(f"PCA 1 ")
+        ax.set_ylabel(f"PCA 2")
+        ax.set_title("PCA Projection")
         ax.legend()
         
-        st.pyplot(fig)
+        st.pyplot(fig, width=800)
                         
         
 with tab1:
@@ -604,6 +604,7 @@ with tab4:
     
     st.markdown("---")
     
+
 
 
 
