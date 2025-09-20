@@ -483,19 +483,20 @@ if predict_btn:
         # Compute similarity
         # -----------------------
         similarities = cosine_similarity(user_features, df_features)[0]  # array of similarity with each row
+        og_similarities = f"{similarity:.2f}"
         
         # -----------------------
         # Build results dataframe
         # -----------------------
         results = df[['Age', 'Target']].copy()
-        results['Similarity (%)'] = similarities * 100
+        results['Similarity (%)'] = og_similarities * 100
         
         # Sort by similarity descending
         results_sorted = results.sort_values(by='Similarity (%)', ascending=False)
         
         # Display top N similar points
         top_n = 10
-        st.subheader(f"Top {top_n} data points similar to USER")
+        st.subheader(f"Top {top_n} Data Points Similar To Your Health Parameters")
         st.dataframe(results_sorted.head(top_n).reset_index(drop=True))
               
                         
@@ -657,6 +658,7 @@ with tab4:
     
     st.markdown("---")
     
+
 
 
 
