@@ -516,7 +516,7 @@ with tab4:
     <div class="interpretation-section">
         <h2> Understanding the Predictions</h2>
         <p style="font-size: 1.1rem; margin-bottom: 2rem;">
-            Learn how different health factors influence your heart disease risk assessment.
+            Learn how different health factors influence coronary artery disease.
         </p>
     </div>
     """, unsafe_allow_html=True)
@@ -545,6 +545,7 @@ with tab4:
     
     st.markdown("---")
     
+
 
 
 
