@@ -310,7 +310,7 @@ if predict_btn:
   
 
     
-    st.markdown(hide_sidebar, unsafe_allow_html=True
+    st.markdown(hide_sidebar, unsafe_allow_html=True)
     placeholder = st.empty()
     with placeholder.container():
         components.html(rotating_dots, height=100)
@@ -576,6 +576,7 @@ else:
     </div>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
