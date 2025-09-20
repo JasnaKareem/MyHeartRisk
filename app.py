@@ -304,7 +304,15 @@ if predict_btn:
   
 
     
-  
+    collapse_script = """
+    <script>
+    const sidebarToggle = window.parent.document.querySelector('[data-testid="stSidebar"][aria-expanded="true"] ~ div button[title="Collapse"]');
+    if(sidebarToggle){
+        sidebarToggle.click();
+    }
+    </script>
+    """
+    components.html(collapse_script, height=0)
     placeholder = st.empty()
     with placeholder.container():
         components.html(rotating_dots, height=100)
@@ -570,6 +578,7 @@ else:
     </div>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
