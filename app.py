@@ -517,18 +517,16 @@ with tab3:
         
         ext_col1, ext_col2 = st.columns(2)
         with ext_col1:
-            st.metric(" Accuracy", "100%", "Perfect")
-            st.metric(" Sensitivity", "100%", "All Cases Detected")
+            st.metric(" Accuracy", "100%"")
+            st.metric(" Sensitivity", "100%")
         with ext_col2:
-            st.metric(" Specificity", "100%", "No False Positives")
-            st.metric(" MCC", "1.00", "Perfect Correlation")
+            st.metric(" Specificity", "100%")
+            st.metric(" MCC", "100%")
     
     st.markdown("""
     <div style="background: #e8f5e8; padding: 1.5rem; border-radius: 10px; margin: 2rem 0;">
-        <h4> </h4>
-        <p>These outstanding metrics demonstrate that our model is highly reliable for predicting 
-        Coronary Heart Disease risk. The perfect external validation scores particularly highlight 
-        the model's ability to generalize to new, unseen patient data.</p>
+        <h4>Important to Note: </h4>
+        <p> The External Validation Set Consisted of 20 Data Points , Hence 100% Metrics in External Validation is Expected Due to Congeneric Parameters</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -566,6 +564,7 @@ with tab4:
     
     st.markdown("---")
     
+
 
 
 
