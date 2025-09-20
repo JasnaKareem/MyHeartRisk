@@ -217,7 +217,8 @@ with st.sidebar:
         user_data[age_col] = st.slider(
             f"<b>{age_col} (years)</b>", 
             min_val, max_val, mean_val,
-            help="Your current age in years"
+            help="Your current age in years",
+            unsafe_allow_html=True
         )
     
   
@@ -262,7 +263,8 @@ with st.sidebar:
             user_data[col] = st.selectbox(
                 f"<b>{col}</b>", 
                 unique_vals,
-                help=f"Select your {col.lower()}"
+                help=f"Select your {col.lower()}",
+                unsafe_allow_html=True
             )
     
     st.markdown("---")
@@ -567,6 +569,7 @@ else:
     </div>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
