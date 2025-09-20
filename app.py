@@ -500,8 +500,8 @@ if predict_btn:
         if results_sorted['Target'].isna().any():
             first_none_index = results_sorted[results_sorted['Target'].isna()].index[0]
             results_sorted = results_sorted.drop(first_none_index).reset_index(drop=True)
-        
-        top_n = 10
+        results_sorted = results_sorted.iloc[1:].reset_index(drop=True)
+        top_n = 11
         st.subheader(f"Patient Ages Similar To Your Health Parameters")
         top_results = results_sorted.head(top_n)
         
@@ -664,6 +664,7 @@ with tab4:
     
     st.markdown("---")
     
+
 
 
 
