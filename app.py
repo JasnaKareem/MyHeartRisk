@@ -370,38 +370,29 @@ if predict_btn:
         
         # Additional insights
         st.markdown("---")
-        # -----------------------
-        # Step 1: Load dataset
-        # -----------------------
         df = pd.read_excel(data_path)
         
         # -----------------------
-        # Step 2: Collect user input (your existing code fills user_data dict)
+        # Add user input
         # -----------------------
-        # Example fallback if testing outside Streamlit:
-        # user_data = {"age": 50, "sex": "male", "cholesterol": 210}
-        # Make sure your Streamlit form populates this dict properly
-        
+        # user_data comes from Streamlit inputs
         user_df = pd.DataFrame([user_data])
-        user_df["Target"] = "USER"
-        
-        # Append user to original dataframe
+        user_df["Target"] = -1  # special label for USER
         df = pd.concat([df, user_df], ignore_index=True)
         
         # -----------------------
-        # Step 3: Identify columns
+        # Identify numerical and categorical columns
         # -----------------------
         numerical_cols = df.select_dtypes(include=np.number).columns.tolist()
         if 'Target' in numerical_cols:
             numerical_cols.remove('Target')
         
         categorical_cols = df.select_dtypes(include='object').columns.tolist()
-        
         for col in categorical_cols:
             df[col] = df[col].astype(str)
         
         # -----------------------
-        # Step 4: Preprocess
+        # Preprocess
         # -----------------------
         numerical_transformer = Pipeline(steps=[
             ('imputer', SimpleImputer(strategy='mean')),
@@ -422,35 +413,30 @@ if predict_btn:
         df_processed = preprocessor.fit_transform(df)
         
         # -----------------------
-        # Step 5: PCA
+        # PCA
         # -----------------------
         pca = PCA(n_components=2)
         pca_result = pca.fit_transform(df_processed)
-        
         explained_var = pca.explained_variance_ratio_ * 100
         
         # -----------------------
-        # Step 6: Streamlit plot
+        # Plot in Streamlit
         # -----------------------
         fig, ax = plt.subplots(figsize=(8, 6))
         
-        user_mask = df["Target"] == "USER"
+        # Controls (0)
+        ax.scatter(pca_result[df["Target"] == 0, 0],
+                   pca_result[df["Target"] == 0, 1],
+                   c="blue", label="Controls", alpha=0.6)
         
-        # Plot controls
-        if "0" in df["Target"].values:
-            ax.scatter(pca_result[(df["Target"] == "0"), 0],
-                       pca_result[(df["Target"] == "0"), 1],
-                       c="blue", label="Controls", alpha=0.6)
+        # Cases (1)
+        ax.scatter(pca_result[df["Target"] == 1, 0],
+                   pca_result[df["Target"] == 1, 1],
+                   c="red", label="Cases", alpha=0.6)
         
-        # Plot cases
-        if "1" in df["Target"].values:
-            ax.scatter(pca_result[(df["Target"] == "1"), 0],
-                       pca_result[(df["Target"] == "1"), 1],
-                       c="red", label="Cases", alpha=0.6)
-        
-        # Plot user
-        ax.scatter(pca_result[user_mask, 0],
-                   pca_result[user_mask, 1],
+        # User (-1)
+        ax.scatter(pca_result[df["Target"] == -1, 0],
+                   pca_result[df["Target"] == -1, 1],
                    c="gold", s=200, edgecolor="black", marker="*", label="You")
         
         ax.set_xlabel(f"PCA 1 ({explained_var[0]:.1f}% variance)")
@@ -459,7 +445,7 @@ if predict_btn:
         ax.legend()
         
         st.pyplot(fig)
-                
+                        
         
 with tab1:
        st.markdown("""
@@ -618,6 +604,7 @@ with tab4:
     
     st.markdown("---")
     
+
 
 
 
