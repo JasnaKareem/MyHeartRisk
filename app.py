@@ -508,8 +508,8 @@ else:
     # Welcome message when no analysis is performed
     st.markdown("""
     <div style="text-align: center; padding: 1rem; background: linear-gradient(90deg, #ff6b6b, #ee5a6f); border-radius: 10px; margin-bottom: 1rem;">
-        <h2 style="color: #495057; margin-bottom: 1rem;">Welcome to MyHeartRisk</h2>
-        <p style="color: #6c757d; font-size: 1.3rem; margin-bottom: 2rem;">
+        <h2 style="color: white; margin: 0;>Welcome to MyHeartRisk</h2>
+        <p style="color: white; opacity: 0.9; margin: 0; margin-bottom: 2rem;">
             Enter your health parameters in the sidebar to get started with your personalized heart disease risk assessment.
         </p>
         <div style="background: white; padding: 1.5rem; border-radius: 15px; margin: 1rem auto; max-width: 500px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
@@ -520,5 +520,6 @@ else:
     </div>
 
     """, unsafe_allow_html=True)
+
 
 
