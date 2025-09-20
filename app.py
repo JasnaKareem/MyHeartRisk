@@ -429,14 +429,14 @@ else:
 </div>
 """, unsafe_allow_html=True)
 with tab2:
-        st.markdown("""
-        <div class="dataset-section">
-            <h2>Dataset Overview</h2>
-            <p style="font-size: 1.1rem; margin-bottom: 2rem;">
-                Our model is trained on carefully curated hospital data to ensure real-world accuracy and reliability.
-            </p>
-        </div>
-        """, unsafe_allow_html=True)
+    st.markdown("""
+    <div class="dataset-section">
+        <h2>Dataset Overview</h2>
+        <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+            Our model is trained on carefully curated hospital data to ensure real-world accuracy and reliability.
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
     
     col1, col2, col3 = st.columns(3)
     
@@ -566,6 +566,7 @@ with tab4:
     
     st.markdown("---")
     
+
 
 
 
