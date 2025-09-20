@@ -446,21 +446,20 @@ with tab2:
     st.markdown("---")
     
     st.markdown("### Principal Component Analysis")
-    st.image(pca, caption='PCA Visualization: Distribution of Cases vs Controls (Cumulative Variance: 37%)')
+    st.image(pca, caption='PCA Visualization: Distribution of Cases vs Controls (Cumulative Variance: 37%)', width=800)
     
     st.markdown("""
     <div style="background: #e3f2fd; padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
         <h4> What This Chart Shows:</h4>
         <p>The PCA plot demonstrates clear separation between heart disease cases and healthy controls, 
         indicating that the health parameters used in our model are effective discriminators. 
-        The 37% cumulative variance shows that the first two principal components capture 
-        significant patterns in the data.</p>
+        </p>
     </div>
     """, unsafe_allow_html=True)
 
 with tab3:
     st.markdown("""
-    <div class="model-performance">
+    <div class="dataset-section">
         <h2> Deployed Model</h2>
         <p style="font-size: 1.1rem; opacity: 0.9;">
             The Deployed Model is based on Logistic Regression
@@ -546,6 +545,7 @@ with tab4:
     
     st.markdown("---")
     
+
 
 
 
