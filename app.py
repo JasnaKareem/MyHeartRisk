@@ -494,8 +494,8 @@ if predict_btn:
         
         # Optionally format similarity to 2 decimals
         results_sorted['Similarity (%)'] = results_sorted['Similarity (%)'].map(lambda x: f"{x:.2f}")
-        top_n = 10
-        st.subheader(f"Top 10 Patient Ages Similar To Your Health Parameters")
+        top_n = 5
+        st.subheader(f"Top 5 Patient Ages Similar To Your Health Parameters")
         st.dataframe(results_sorted.head(top_n).reset_index(drop=True))
                                 
         
@@ -656,6 +656,7 @@ with tab4:
     
     st.markdown("---")
     
+
 
 
 
