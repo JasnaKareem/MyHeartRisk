@@ -470,7 +470,7 @@ with tab3:
         ### Comparative Analysis
         *5 K-Fold Stratified Cross Validation*
         """)
-    st.image(compare, caption=' Comprehensive Model Comparison (10 Models with 5-Fold Stratified Cross-Validation)')
+    st.image(compare, caption=' Comprehensive Model Comparison (10 Models with 5-Fold Stratified Cross-Validation)', width=800)
     
     st.markdown("---")
     
@@ -545,6 +545,7 @@ with tab4:
     
     st.markdown("---")
     
+
 
 
 
