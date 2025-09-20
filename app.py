@@ -486,10 +486,10 @@ with tab3:
         
         metrics_col1, metrics_col2 = st.columns(2)
         with metrics_col1:
-            st.metric(" Accuracy", "94% ± 0.01%")
-            st.metric(" Sensitivity", "92% ± 0.04%")
+            st.metric(" Accuracy", "0.94 ± 0.01")
+            st.metric(" Sensitivity", "0.92 ± 0.04")
         with metrics_col2:
-            st.metric(" Specificity", "95% ± 0.03%")
+            st.metric(" Specificity", "0.95 ± 0.03")
             st.metric(" MCC", "0.88 ± 0.02")
     
     with col2:
@@ -547,6 +547,7 @@ with tab4:
     
     st.markdown("---")
     
+
 
 
 
