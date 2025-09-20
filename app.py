@@ -509,7 +509,7 @@ else:
 <div style="text-align: center; padding: 1rem; background: linear-gradient(90deg, #ff6b6b, #ee5a6f); border-radius: 10px; margin-bottom: 1rem;">
     <h2 style="color: white; margin: 0;">Welcome to MyHeartRisk</h2>
     <p style="color: white; opacity: 0.9; margin: 0; margin-bottom: 2rem;">
-        Enter your health parameters in the sidebar to get started with your personalized heart disease risk assessment.
+        Enter your health parameters in the sidebar to get started.
     </p>
     <div style="background: white; padding: 1.5rem; border-radius: 15px; margin: 1rem auto; max-width: 700px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
         <p style="color: #495057; margin: 0;">
@@ -518,6 +518,7 @@ else:
     </div>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
