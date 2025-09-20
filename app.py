@@ -178,7 +178,7 @@ heartimage = os.path.join(mainpath, r'heart.png')
 neg = os.path.join(mainpath, r'neg.jpg')
 pos = os.path.join(mainpath, r'pos.jpg')
 compare = os.path.join(mainpath, r'Comparison.jpg')
-pca = os.path.join(mainpath, r'PCA.jpg')
+pcaimage = os.path.join(mainpath, r'PCA.jpg')
 
 # Header section with titles on left, heart image on right
 col1, col2 = st.columns([3, 1])
@@ -519,7 +519,7 @@ with tab2:
     st.markdown("---")
     
     st.markdown("### Principal Component Analysis")
-    st.image(pca, caption='PCA Visualization: Distribution of Cases vs Controls (Cumulative Variance: 37%)', width=800)
+    st.image(pcaimage, caption='PCA Visualization: Distribution of Cases vs Controls (Cumulative Variance: 37%)', width=800)
     
     st.markdown("""
     <div style="background: #e3f2fd; padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
@@ -618,6 +618,7 @@ with tab4:
     
     st.markdown("---")
     
+
 
 
 
