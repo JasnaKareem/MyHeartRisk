@@ -180,12 +180,12 @@ with st.sidebar:
         max_val = int(X[age_col].max())
         mean_val = int(round(X[age_col].mean()))
         user_data[age_col] = st.slider(
-            f"🎂 {age_col} (years)", 
+            f" {age_col} (years)", 
             min_val, max_val, mean_val,
             help="Your current age in years"
         )
     
-    st.markdown("### 🏥 Clinical Measurements")
+  
     
     # Group other numeric features
     for col in features:
@@ -222,7 +222,6 @@ with st.sidebar:
             categorical_features.append(col)
     
     if categorical_features:
-        st.markdown("### 📋 Additional Information")
         for col in categorical_features:
             unique_vals = X[col].dropna().unique()
             user_data[col] = st.selectbox(
@@ -246,7 +245,7 @@ if not predict_btn:
     st.markdown("""
     <div class="instruction-card">
         <h3>🎯 How to Use This App</h3>
-        <p>This advanced machine learning application predicts your Coronary Heart Disease risk using hospital-validated data. Simply:</p>
+        <p>This advanced machine learning application predicts your Coronary Artery Disease risk using hospital-validated data. Simply:</p>
         <ul>
             <li><strong>Step 1:</strong> Adjust your health parameters in the sidebar</li>
             <li><strong>Step 2:</strong> Click the "🔍 Analyze Risk" button</li>
@@ -265,13 +264,13 @@ model = joblib.load(model_path)
 # Show tabs and content only when analysis starts
 if predict_btn:
     # Create tabs when analysis is performed
-    tab1, tab2, tab3, tab4 = st.tabs(["📊 Risk Assessment", "📈 Dataset", "🤖 Model Performance", "🔍 Feature Analysis"])
+    tab1, tab2, tab3, tab4 = st.tabs(["Report Dashboard", "Dataset", "Model Performance", "Feature Analysis"])
     
     # Prediction only on button click
     with tab1:
-        st.markdown("## 📊 Risk Assessment Dashboard")
+        st.markdown("## Report Dashboard")
         
-        with st.spinner("🔄 Analyzing your health parameters..."):
+        with st.spinner(" Analyzing your health parameters..."):
             prediction = model.predict(input_df)[0]
             probabilities = model.predict_proba(input_df)[0]
         
@@ -283,7 +282,7 @@ if predict_btn:
                 st.markdown("""
                 <div class="positive-result">
                     <h2>⚠️ Higher Risk Detected</h2>
-                    <p style="font-size: 1.2rem; margin-bottom: 1rem;">Your health parameters show similarities to patients diagnosed with Coronary Heart Disease.</p>
+                    <p style="font-size: 1.2rem; margin-bottom: 1rem;">Your health parameters show similarities to patients diagnosed with Coronary Artery Disease.</p>
                     <p style="font-size: 1rem; opacity: 0.9;">
                         <strong>Recommendation:</strong> Please consult with a healthcare professional for a comprehensive evaluation.
                     </p>
@@ -296,7 +295,7 @@ if predict_btn:
                 st.markdown("""
                 <div class="negative-result">
                     <h2>✅ Lower Risk Indicated</h2>
-                    <p style="font-size: 1.2rem; margin-bottom: 1rem;">Your health parameters suggest a lower likelihood of Coronary Heart Disease.</p>
+                    <p style="font-size: 1.2rem; margin-bottom: 1rem;">Your health parameters suggest a lower likelihood of Coronary Artery Disease.</p>
                     <p style="font-size: 1rem; opacity: 0.9;">
                         <strong>Recommendation:</strong> Continue maintaining a healthy lifestyle and regular check-ups.
                     </p>
@@ -325,7 +324,7 @@ if predict_btn:
             """, unsafe_allow_html=True)
         
         # Progress bar with modern styling
-        st.markdown("### 📈 Detailed Analysis")
+        st.markdown("### Detailed Analysis")
         progress_col1, progress_col2 = st.columns([3, 1])
         
         with progress_col1:
@@ -346,21 +345,21 @@ if predict_btn:
         
         with col3:
             st.metric(
-                label="🏥 Dataset Size",
+                label="Dataset Size",
                 value="120 patients",
                 help="Total number of patients used for model training"
             )
         
         with col4:
             st.metric(
-                label="🎯 Model Accuracy",
+                label="Model Accuracy",
                 value="94%",
                 help="Internal validation accuracy"
             )
         
         with col5:
             st.metric(
-                label="🔬 External Validation",
+                label="External Validation",
                 value="100%",
                 help="Performance on external test set"
             )
@@ -368,7 +367,7 @@ if predict_btn:
     with tab2:
         st.markdown("""
         <div class="dataset-section">
-            <h2>📈 Dataset Overview</h2>
+            <h2>Dataset Overview</h2>
             <p style="font-size: 1.1rem; margin-bottom: 2rem;">
                 Our model is trained on carefully curated hospital data to ensure real-world accuracy and reliability.
             </p>
@@ -379,7 +378,7 @@ if predict_btn:
     
     with col1:
         st.metric(
-            label="📊 Total Samples",
+            label="Total Samples",
             value="120 patients",
             delta="60 cases + 60 controls",
             help="Balanced dataset for optimal learning"
@@ -387,7 +386,7 @@ if predict_btn:
     
     with col2:
         st.metric(
-            label="🧪 External Validation",
+            label="External Validation",
             value="20 samples",
             delta="10 cases + 10 controls",
             help="Independent test set for validation"
@@ -395,7 +394,7 @@ if predict_btn:
     
     with col3:
         st.metric(
-            label="📐 Data Quality",
+            label="Data Quality",
             value="Hospital Grade",
             delta="Real-world clinical data",
             help="Professional medical data collection"
@@ -403,12 +402,12 @@ if predict_btn:
     
     st.markdown("---")
     
-    st.markdown("### 🎯 Principal Component Analysis")
+    st.markdown("### Principal Component Analysis")
     st.image(pca, caption='PCA Visualization: Distribution of Cases vs Controls (Cumulative Variance: 37%)', width=400)
     
     st.markdown("""
     <div style="background: #e3f2fd; padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
-        <h4>📊 What This Chart Shows:</h4>
+        <h4> What This Chart Shows:</h4>
         <p>The PCA plot demonstrates clear separation between heart disease cases and healthy controls, 
         indicating that the health parameters used in our model are effective discriminators. 
         The 37% cumulative variance shows that the first two principal components capture 
@@ -419,14 +418,14 @@ if predict_btn:
     with tab3:
         st.markdown("""
         <div class="model-performance">
-            <h2>🤖 Advanced Machine Learning Model</h2>
+            <h2> Advanced Machine Learning Model</h2>
             <p style="font-size: 1.1rem; opacity: 0.9;">
                 Our Logistic Regression model achieves exceptional performance through rigorous validation and testing.
             </p>
         </div>
         """, unsafe_allow_html=True)
     
-    st.image(compare, caption='📊 Comprehensive Model Comparison (10 Models with 5-Fold Stratified Cross-Validation)', width=400)
+    st.image(compare, caption=' Comprehensive Model Comparison (10 Models with 5-Fold Stratified Cross-Validation)', width=400)
     
     st.markdown("---")
     
@@ -434,35 +433,35 @@ if predict_btn:
     
     with col1:
         st.markdown("""
-        ### 🏥 Internal Validation Results
+        ### Internal Validation Results
         *5x2 K-Fold Stratified Cross Validation*
         """)
         
         metrics_col1, metrics_col2 = st.columns(2)
         with metrics_col1:
-            st.metric("🎯 Accuracy", "94% ± 1%", "Excellent")
-            st.metric("🔍 Sensitivity", "92% ± 4%", "High Detection")
+            st.metric(" Accuracy", "94% ± 1%", "Excellent")
+            st.metric(" Sensitivity", "92% ± 4%", "High Detection")
         with metrics_col2:
-            st.metric("✅ Specificity", "95% ± 3%", "Low False Positives")
-            st.metric("⚖️ MCC", "0.88 ± 0.02", "Strong Correlation")
+            st.metric(" Specificity", "95% ± 3%", "Low False Positives")
+            st.metric(" MCC", "0.88 ± 0.02", "Strong Correlation")
     
     with col2:
         st.markdown("""
-        ### 🧪 External Validation Results
+        ###  External Validation Results
         *Independent Test Set (20 Samples)*
         """)
         
         ext_col1, ext_col2 = st.columns(2)
         with ext_col1:
-            st.metric("🎯 Accuracy", "100%", "Perfect")
-            st.metric("🔍 Sensitivity", "100%", "All Cases Detected")
+            st.metric(" Accuracy", "100%", "Perfect")
+            st.metric(" Sensitivity", "100%", "All Cases Detected")
         with ext_col2:
-            st.metric("✅ Specificity", "100%", "No False Positives")
-            st.metric("⚖️ MCC", "1.00", "Perfect Correlation")
+            st.metric(" Specificity", "100%", "No False Positives")
+            st.metric(" MCC", "1.00", "Perfect Correlation")
     
     st.markdown("""
     <div style="background: #e8f5e8; padding: 1.5rem; border-radius: 10px; margin: 2rem 0;">
-        <h4>🏆 Model Excellence</h4>
+        <h4> </h4>
         <p>These outstanding metrics demonstrate that our model is highly reliable for predicting 
         Coronary Heart Disease risk. The perfect external validation scores particularly highlight 
         the model's ability to generalize to new, unseen patient data.</p>
@@ -472,7 +471,7 @@ if predict_btn:
     with tab4:
         st.markdown("""
         <div class="interpretation-section">
-            <h2>🔍 Understanding the Predictions</h2>
+            <h2> Understanding the Predictions</h2>
             <p style="font-size: 1.1rem; margin-bottom: 2rem;">
                 Learn how different health factors influence your heart disease risk assessment.
             </p>
@@ -503,17 +502,7 @@ if predict_btn:
     
     st.markdown("---")
     
-    st.markdown("""
-    <div style="background: #fff3cd; padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
-        <h4>💡 Important Disclaimer</h4>
-        <p><strong>This tool is for educational and screening purposes only.</strong> 
-        It should not replace professional medical advice, diagnosis, or treatment. 
-        Always consult with qualified healthcare professionals for medical decisions.</p>
-        
-        <p><strong>Remember:</strong> Early detection and lifestyle modifications can significantly 
-        reduce cardiovascular risk. Regular check-ups with your healthcare provider are essential.</p>
-    </div>
-    """, unsafe_allow_html=True)
+   
 
 else:
     # Welcome message when no analysis is performed
@@ -525,8 +514,9 @@ else:
         </p>
         <div style="background: white; padding: 1.5rem; border-radius: 15px; margin: 1rem auto; max-width: 500px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
             <p style="color: #495057; margin: 0;">
-                📊 Advanced AI Analysis • 🏥 Hospital-Grade Data • 🎯 94% Accuracy
+                📊 Interpretable Parameters • 🏥 Hospital-Grade Data • 🎯 94% Accuracy
             </p>
         </div>
     </div>
+
     """, unsafe_allow_html=True)
