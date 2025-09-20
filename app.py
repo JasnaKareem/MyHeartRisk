@@ -296,7 +296,7 @@ model = joblib.load(model_path)
 # Show tabs and content only when analysis starts
 if predict_btn:
     # Create tabs when analysis is performed
-     placeholder = st.empty()   # Reserve a spot for loader
+    placeholder = st.empty()   # Reserve a spot for loader
 
     # Show loader
     placeholder.components.v1.html(rotating_dots, height=100)
@@ -560,6 +560,7 @@ else:
     </div>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
