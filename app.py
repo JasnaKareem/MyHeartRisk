@@ -489,7 +489,7 @@ if predict_btn:
         # Build results dataframe
         # -----------------------
         results = df[['Age', 'Target']].copy()
-        results['Similarity (%)'] = og_similarities * 100
+        results['Similarity (%)'] = float(og_similarities) * 100
         
         # Sort by similarity descending
         results_sorted = results.sort_values(by='Similarity (%)', ascending=False)
@@ -658,6 +658,7 @@ with tab4:
     
     st.markdown("---")
     
+
 
 
 
