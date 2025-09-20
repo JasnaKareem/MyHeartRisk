@@ -507,7 +507,7 @@ with tab3:
     st.markdown("""
     <div style="background: #e8f5e8; padding: 1.5rem; border-radius: 10px; margin: 2rem 0;">
         <h4>Important to Note: </h4>
-        <p> The External Validation Set Consisted of 20 Data Points , Hence 100% Metrics in External Validation is Expected Due to Congeneric Parameters</p>
+        <p> The External Validation Set Consisted of 20 Data Points , Hence 100% Metrics in External Validation is Expected Due to Possible Congeneric Parameters</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -545,6 +545,7 @@ with tab4:
     
     st.markdown("---")
     
+
 
 
 
