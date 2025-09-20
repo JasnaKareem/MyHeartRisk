@@ -483,7 +483,7 @@ if predict_btn:
         # Compute similarity
         # -----------------------
         similarities = cosine_similarity(user_features, df_features)[0]  # array of similarity with each row
-        og_similarities = f"{similarity:.2f}"
+        og_similarities = f"{similarities:.2f}"
         
         # -----------------------
         # Build results dataframe
@@ -658,6 +658,7 @@ with tab4:
     
     st.markdown("---")
     
+
 
 
 
