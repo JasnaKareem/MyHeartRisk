@@ -399,7 +399,7 @@ with tab1:
         </p>
         <div style="background: white; padding: 1.5rem; border-radius: 15px; margin: 1rem auto; max-width: 700px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
             <p style="color: #495057; margin: 0;">
-                📊 Interpretable Parameters • 🏥 Hospital-Grade Data • 🎯 94% Accuracy
+                Interpretable Parameters • Hospital-Grade Data • 94% Accuracy
             </p>
         </div>
     </div>
@@ -547,6 +547,7 @@ with tab4:
     
     st.markdown("---")
     
+
 
 
 
